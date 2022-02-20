@@ -18,8 +18,6 @@ const AddExpenses = (props) => {
       alert("Entered data is not valid !!");
     } else if (!Number.isNaN(+enteredAmount) && +enteredAmount < 0) {
       alert("Please enter a  valid amount..!");
-    } else if (!Number.isNaN(+enteredDate) && +enteredDate < 0) {
-      alert("Please enter a  valid date..!");
     } else {
       props.onAddExpenses(enteredExpenseName, enteredAmount, enteredDate);
       setEnteredExpenseName("");
@@ -43,7 +41,9 @@ const AddExpenses = (props) => {
   return (
     <Card>
       <form onSubmit={addDataHandler} className="frm">
-        <label htmlFor="ExpenseName" className="lab">ExpenseName</label>
+        <label htmlFor="ExpenseName" className="lab">
+          ExpenseName
+        </label>
         <input
           id="ExpenseName"
           type="text"
@@ -51,7 +51,9 @@ const AddExpenses = (props) => {
           value={enteredExpenseName}
         ></input>
 
-        <label htmlFor="amount" className="lab">Amount</label>
+        <label htmlFor="amount" className="lab">
+          Amount
+        </label>
         <input
           id="amount"
           type="number"
@@ -59,15 +61,19 @@ const AddExpenses = (props) => {
           value={enteredAmount}
         ></input>
 
-        <label htmlFor="date" className="lab">Date</label>
+        <label htmlFor="date" className="lab">
+          Date
+        </label>
         <input
           id="date"
-          type="number"
+          type="date"
           onChange={dateChangeHandler}
           value={enteredDate}
         ></input>
 
-        <Button type="Submit" className="btn">Submit</Button>
+        <Button type="Submit" className="btn">
+          Submit
+        </Button>
       </form>
     </Card>
   );
