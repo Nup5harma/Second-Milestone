@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Card from "../UI/Card";
 import Button from "./Button";
-
+import "./form.css";
 const AddExpenses = (props) => {
   const [enteredExpenseName, setEnteredExpenseName] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -42,8 +42,8 @@ const AddExpenses = (props) => {
 
   return (
     <Card>
-      <form onSubmit={addDataHandler}>
-        <label htmlFor="ExpenseName">ExpenseName</label>
+      <form onSubmit={addDataHandler} className="frm">
+        <label htmlFor="ExpenseName" className="lab">ExpenseName</label>
         <input
           id="ExpenseName"
           type="text"
@@ -51,7 +51,7 @@ const AddExpenses = (props) => {
           value={enteredExpenseName}
         ></input>
 
-        <label htmlFor="amount">Amount</label>
+        <label htmlFor="amount" className="lab">Amount</label>
         <input
           id="amount"
           type="number"
@@ -59,7 +59,7 @@ const AddExpenses = (props) => {
           value={enteredAmount}
         ></input>
 
-        <label htmlFor="date">Date</label>
+        <label htmlFor="date" className="lab">Date</label>
         <input
           id="date"
           type="number"
@@ -67,7 +67,7 @@ const AddExpenses = (props) => {
           value={enteredDate}
         ></input>
 
-        <Button type="Submit">Submit</Button>
+        <Button type="Submit" className="btn">Submit</Button>
       </form>
     </Card>
   );

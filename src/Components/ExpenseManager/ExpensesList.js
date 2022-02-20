@@ -3,8 +3,8 @@ import React from "react";
 import Card from "../UI/Card";
 
 const ExpensesList = (props) => {
-    return (
-        <Card>
+  return (
+    <Card>
         <ul>
           {props.list.map((expense) => (
             <li key={expense.id}>
@@ -12,8 +12,8 @@ const ExpensesList = (props) => {
             </li>
           ))}
         </ul>
-      </Card>
-    );
+    </Card>
+  );
 };
 
 export default ExpensesList;
