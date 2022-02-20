@@ -8,7 +8,8 @@ const ExpensesList = (props) => {
       <ul>
         {props.list.map((expense) => (
           <li key={expense.id}>
-            {expense.name} {expense.amount} {expense.date}
+            Expense name:{expense.name}, Amount:{expense.amount}, Date:
+            {expense.date}
           </li>
         ))}
       </ul>
