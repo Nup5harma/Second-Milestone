@@ -1,3 +1,4 @@
+import { getQueriesForElement } from "@testing-library/react";
 import { useState } from "react";
 import Card from "../UI/Card";
 import Button from "./Button";
@@ -38,6 +39,10 @@ const AddExpenses = (props) => {
     setEnteredDate(event.target.value);
   };
 
+  const dropdownChangeHandler = (event) => {
+    props.onChangeFilter(event.target.value);
+  };
+
   return (
     <Card>
       <form onSubmit={addDataHandler} className="frm">
@@ -74,6 +79,15 @@ const AddExpenses = (props) => {
         <Button type="Submit" className="btn">
           Submit
         </Button>
+
+        <label className="lab">Search</label>
+        <select value={props.selected} onChange={dropdownChangeHandler}>
+          <option value="2022">2022</option>
+          <option value="2021">2021</option>
+          <option value="2020">2020</option>
+          <option value="2019">2019</option>
+          <option value="2018">2018</option>
+        </select>
       </form>
     </Card>
   );
