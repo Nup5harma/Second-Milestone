@@ -1,4 +1,3 @@
-import { getQueriesForElement } from "@testing-library/react";
 import { useState } from "react";
 import Card from "../UI/Card";
 import Button from "./Button";
@@ -7,6 +6,7 @@ const AddExpenses = (props) => {
   const [enteredExpenseName, setEnteredExpenseName] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
+  const [year, setEnteredYear] = useState("");
 
   const addDataHandler = (event) => {
     event.preventDefault();
@@ -19,11 +19,12 @@ const AddExpenses = (props) => {
       alert("Entered data is not valid !!");
     } else if (!Number.isNaN(+enteredAmount) && +enteredAmount < 0) {
       alert("Please enter a  valid amount..!");
-    } else {
+    } else if (enteredDate.substring(0, 4) === year) {
       props.onAddExpenses(enteredExpenseName, enteredAmount, enteredDate);
       setEnteredExpenseName("");
       setEnteredAmount("");
       setEnteredDate("");
+      setEnteredYear("");
     }
   };
 
@@ -39,8 +40,8 @@ const AddExpenses = (props) => {
     setEnteredDate(event.target.value);
   };
 
-  const dropdownChangeHandler = (event) => {
-    props.onChangeFilter(event.target.value);
+  const yearChangeHandler = (event) => {
+    setEnteredYear(event.target.value);
   };
 
   return (
@@ -80,14 +81,15 @@ const AddExpenses = (props) => {
           Submit
         </Button>
 
-        <label className="lab">Search</label>
-        <select value={props.selected} onChange={dropdownChangeHandler}>
-          <option value="2022">2022</option>
-          <option value="2021">2021</option>
-          <option value="2020">2020</option>
-          <option value="2019">2019</option>
-          <option value="2018">2018</option>
-        </select>
+        <label htmlFor="year" className="lab">
+          Search
+        </label>
+        <input
+          id="year"
+          type="text"
+          value={year}
+          onChange={yearChangeHandler}
+        ></input>
       </form>
     </Card>
   );
