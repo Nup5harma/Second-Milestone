@@ -10,16 +10,17 @@ const AddExpenses = (props) => {
   const addDataHandler = (event) => {
     event.preventDefault();
 
-    if (enteredExpenseName.trim().length === 0 || enteredAmount.trim().length === 0 || enteredDate.trim().length === 0) {
+    if (
+      enteredExpenseName.trim().length === 0 ||
+      enteredAmount.trim().length === 0 ||
+      enteredDate.trim().length === 0
+    ) {
       alert("Entered data is not valid !!");
-    }
-    else if (!Number.isNaN(+enteredAmount) && +enteredAmount < 0) {
+    } else if (!Number.isNaN(+enteredAmount) && +enteredAmount < 0) {
       alert("Please enter a  valid amount..!");
-    }
-    else if (!Number.isNaN(+enteredDate) && +enteredDate < 0) {
+    } else if (!Number.isNaN(+enteredDate) && +enteredDate < 0) {
       alert("Please enter a  valid date..!");
-    }
-    else {
+    } else {
       props.onAddExpenses(enteredExpenseName, enteredAmount, enteredDate);
       setEnteredExpenseName("");
       setEnteredAmount("");
@@ -41,34 +42,34 @@ const AddExpenses = (props) => {
 
   return (
     <Card>
-    <form onSubmit={addDataHandler}>
-      <label htmlFor="expensename">ExpenseName</label>
-      <input
-        id="expensename"
-        type="text"
-        onChange={expenseChangeHandler}
-        value={enteredExpenseName}
-      ></input>
+      <form onSubmit={addDataHandler}>
+        <label htmlFor="ExpenseName">ExpenseName</label>
+        <input
+          id="ExpenseName"
+          type="text"
+          onChange={expenseChangeHandler}
+          value={enteredExpenseName}
+        ></input>
 
-      <label htmlFor="amount">Amount</label>
-      <input
-        id="amount"
-        type="number"
-        onChange={amountChangeHandler}
-        value={enteredAmount}
-      ></input>
+        <label htmlFor="amount">Amount</label>
+        <input
+          id="amount"
+          type="number"
+          onChange={amountChangeHandler}
+          value={enteredAmount}
+        ></input>
 
-      <label htmlFor="date">Date</label>
-      <input
-        id="date"
-        type="number"
-        onChange={dateChangeHandler}
-        value={enteredDate}
-          > </input>
-          
-      <Button type="Submit">Submit</Button>
-    <Card /form>
-  </Card>
+        <label htmlFor="date">Date</label>
+        <input
+          id="date"
+          type="number"
+          onChange={dateChangeHandler}
+          value={enteredDate}
+        ></input>
+
+        <Button type="Submit">Submit</Button>
+      </form>
+    </Card>
   );
 };
 
