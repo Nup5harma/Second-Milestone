@@ -79,34 +79,26 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
    ![Name undefined error](./assets/2-amount-and-date-undefined-error.png)
 
-3. Undefined date
+3. Undefined date error
 
-   ![Age undefined error](./assets/3-undefined-date.png)
+   ![Undefined date error]()
 
-4. Undefined date error
+4. Negative amount
 
-   ![Age negative value error](./assets/4-undefined-date-error.png)
+   ![Negative Amount]()
 
-5. Negative amount
+5. Negative amount error
 
-   ![Enter name](./assets/5-negative-amount.png)
+   ![Negative amount error]()
 
-6. Negative amount error
+6. Expense input
 
-   ![User list](./assets/6-negative-amount-error.png)
+   ![Expense input]()
 
-7. Expense input
+7. Expense list
 
-   ![User input](./assets/7-expense-input.png)
+   ![Expense list]()
 
-8. Expense list
+8. Second expense list
 
-   ![User list](./assets/8-expence-list.png)
-
-   9. Second expense input
-
-   ![User list](./assets/9-second-expense-input.png)
-
-   10. Second expense list
-
-   ![User list](./assets/10-second-expense-list.png)
+![Second expense list] ()
