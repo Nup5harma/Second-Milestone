@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import AddExpense from "./Components/ExpenseManager/AddExpenses";
 import ExpenseList from "./Components/ExpenseManager/ExpensesList";
-import Expenses from "./components/ExpenseManager/Expenses";
+import Expenses from "./Components/ExpenseManager/Expenses";
 
 function App() {
   const [expenses, setExpenses] = useState([]);
