@@ -30,14 +30,14 @@ function App() {
         },
       ];
     });
-    return (
-      <div>
-        <AddExpense onAddExpense={onAddExpenseHandler} />
-        <ExpenseList list={expenseList} />
-        <Expenses items={expenses} />
-      </div>
-    );
   };
+  return (
+    <div>
+      <AddExpense onAddExpense={onAddExpenseHandler} />
+      <ExpenseList list={expenseList} />
+      <Expenses items={expenses} />
+    </div>
+  );
 }
 
 export default App;
