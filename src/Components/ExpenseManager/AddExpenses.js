@@ -6,7 +6,6 @@ const AddExpenses = (props) => {
   const [enteredExpenseName, setEnteredExpenseName] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
-  const [year, setEnteredYear] = useState("");
 
   const addDataHandler = (event) => {
     event.preventDefault();
@@ -16,15 +15,14 @@ const AddExpenses = (props) => {
       enteredAmount.trim().length === 0 ||
       enteredDate.trim().length === 0
     ) {
-      alert("Entered data is not valid !!");
+      alert("Please enter a valid input!!");
     } else if (!Number.isNaN(+enteredAmount) && +enteredAmount < 0) {
       alert("Please enter a  valid amount..!");
-    } else if (enteredDate.substring(0, 4) === year) {
+    } else {
       props.onAddExpenses(enteredExpenseName, enteredAmount, enteredDate);
       setEnteredExpenseName("");
       setEnteredAmount("");
       setEnteredDate("");
-      setEnteredYear("");
     }
   };
 
@@ -38,10 +36,6 @@ const AddExpenses = (props) => {
 
   const dateChangeHandler = (event) => {
     setEnteredDate(event.target.value);
-  };
-
-  const yearChangeHandler = (event) => {
-    setEnteredYear(event.target.value);
   };
 
   return (
@@ -73,6 +67,8 @@ const AddExpenses = (props) => {
         <input
           id="date"
           type="date"
+          min="2000-01-01"
+          max="2022-12-31"
           onChange={dateChangeHandler}
           value={enteredDate}
         ></input>
@@ -80,16 +76,6 @@ const AddExpenses = (props) => {
         <Button type="Submit" className="btn">
           Submit
         </Button>
-
-        <label htmlFor="year" className="lab">
-          Search
-        </label>
-        <input
-          id="year"
-          type="text"
-          value={year}
-          onChange={yearChangeHandler}
-        ></input>
       </form>
     </Card>
   );
